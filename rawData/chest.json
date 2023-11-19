@@ -1,0 +1,122 @@
+{
+    "Dark Lord's Blessing": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 40,
+            "iron": 0,
+            "ebony": 20,
+            "bone": 0,
+            "gold": 5000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 8,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 5,
+                "defense": 0,
+                "health": 0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0
+        },
+        "set": null
+    },
+    "Revival Plate": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 20,
+            "iron": 0,
+            "ebony": 40,
+            "bone": 0,
+            "gold": 6000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 5,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 7.5,
+                "defense": 0,
+                "health": 0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0
+        },
+        "set": "Revival Set"
+    },
+    "Dark Lord's Blessing - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 52.0,
+            "iron": 0.0,
+            "ebony": 26.0,
+            "bone": 0.0,
+            "gold": 6500000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0.0,
+                "defense": 10.5,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 6.5,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0
+        },
+        "set": null
+    },
+    "Revival Plate - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 26.0,
+            "iron": 0.0,
+            "ebony": 52.0,
+            "bone": 0.0,
+            "gold": 7800000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0.0,
+                "defense": 6.5,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 10.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0
+        },
+        "set": "Revival Set"
+    }
+}

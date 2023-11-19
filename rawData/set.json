@@ -1,0 +1,40 @@
+{
+    "Revival Set":  {
+        2: {
+            "cavalry":	{
+                "attack":   3,
+                "defense":	0,
+                "health":	0
+            },
+            "infantry":	{
+                "attack":   3,
+                "defense":	0,
+                "health":	0
+            },
+            "archer":	{
+                "attack":	3,
+                "defense":	0,
+                "health":   0
+            },
+            "skill damage": 0
+        },
+        4: {
+            "cavalry":	{
+                "attack":	3,
+                "defense":	3,
+                "health":	0
+            },
+            "infantry":	{
+                "attack":	3,
+                "defense":	3,
+                "health":	0
+            },
+            "archer":	{
+                "attack":	3,
+                "defense":	3,
+                "health":   0
+            },
+            "skill damage": 0
+        }
+    }
+}

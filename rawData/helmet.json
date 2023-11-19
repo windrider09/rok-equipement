@@ -1,0 +1,122 @@
+{
+    "Abyssal Visage": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 30,
+            "iron": 10,
+            "ebony": 10,
+            "bone": 0,
+            "gold": 5000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 8,
+                "defense": 0,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 3,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 3,
+                "defense": 0,
+                "health": 0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0
+        },
+        "set": null
+    },
+    "Revival Helm": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 0,
+            "iron": 10,
+            "ebony": 30,
+            "bone": 0,
+            "gold": 6000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 5,
+                "health": 0
+            },
+            "archer": {
+                "attack": 0,
+                "defense": 7.5,
+                "health": 0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0
+        },
+        "set": "Revival Set"
+    },
+    "Abyssal Visage - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 39.0,
+            "iron": 13.0,
+            "ebony": 13.0,
+            "bone": 0.0,
+            "gold": 6500000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 10.5,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 4.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 4.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0
+        },
+        "set": null
+    },
+    "Revival Helm - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 0.0,
+            "iron": 13.0,
+            "ebony": 39.0,
+            "bone": 0.0,
+            "gold": 7800000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 6.5,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 0.0,
+                "defense": 10.0,
+                "health": 0.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0
+        },
+        "set": "Revival Set"
+    }
+}

@@ -1,0 +1,122 @@
+{
+    "Cloud Racers": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 30,
+            "iron": 0,
+            "ebony": 10,
+            "bone": 0,
+            "gold": 5000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 5.5,
+                "defense": 0,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 0,
+                "defense": 0,
+                "health": 2
+            },
+            "march speed": 0,
+            "damage to barbarians": 5
+        },
+        "set": null
+    },
+    "Flame Treads": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 10,
+            "iron": 0,
+            "ebony": 30,
+            "bone": 0,
+            "gold": 5000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 3,
+                "defense": 0,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 0,
+                "defense": 0,
+                "health": 5.5
+            },
+            "march speed": 0,
+            "damage to barbarians": 0
+        },
+        "set": null
+    },
+    "Cloud Racers - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 39.0,
+            "iron": 0.0,
+            "ebony": 13.0,
+            "bone": 0.0,
+            "gold": 6500000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 7.5,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 3.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 6.5
+        },
+        "set": null
+    },
+    "Flame Treads - special talent": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 13.0,
+            "iron": 0.0,
+            "ebony": 39.0,
+            "bone": 0.0,
+            "gold": 6500000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 4.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 7.5
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0
+        },
+        "set": null
+    }
+}
