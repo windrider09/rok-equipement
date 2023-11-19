@@ -38,14 +38,37 @@ def add_dicts(dict1, dict2):
     
     return result
 
-def get_combinations(json_files):
-    # Load JSON data from each file and store them in a list
-    json_data_list = [load_json_file(file_path) for file_path in json_files]
+def add_dicts(dict1, dict2):
+    # Check if dict1 is empty
+    if not bool(dict1):
+        return dict2
+    
+    # Check if dict2 is empty
+    if not bool(dict2):
+        return dict1
 
-    # Use itertools.product to generate combinations
-    combinations = list(product(*json_data_list))
-
-    return combinations
+    result = {}
+    
+    # Iterate through keys in dict1
+    for key in dict1:
+        if key in dict2:
+            if isinstance(dict1[key], dict) and isinstance(dict2[key], dict):
+                # If both values are dictionaries, recursively call add_dicts
+                result[key] = add_dicts(dict1[key], dict2[key])
+            else:
+                # If both values are not dictionaries, add them
+                result[key] = dict1[key] + dict2[key]
+        else:
+            # If the key is only in dict1, copy its value
+            result[key] = dict1[key]
+    
+    # Iterate through keys in dict2 to check for keys not in dict1
+    for key in dict2:
+        if key not in dict1:
+            # If the key is only in dict2, copy its value
+            result[key] = dict2[key]
+    
+    return result
 
 def flatten_dict_columns(df):
     """
@@ -89,39 +112,16 @@ def flatten_dict_columns(df):
 
     return new_df
 
-def add_dicts(dict1, dict2):
-    # Check if dict1 is empty
-    if not bool(dict1):
-        return dict2
-    
-    # Check if dict2 is empty
-    if not bool(dict2):
-        return dict1
+def get_combinations(json_files):
+    # Load JSON data from each file and store them in a list
+    json_data_list = [load_json_file(file_path) for file_path in json_files]
 
-    result = {}
-    
-    # Iterate through keys in dict1
-    for key in dict1:
-        if key in dict2:
-            if isinstance(dict1[key], dict) and isinstance(dict2[key], dict):
-                # If both values are dictionaries, recursively call add_dicts
-                result[key] = add_dicts(dict1[key], dict2[key])
-            else:
-                # If both values are not dictionaries, add them
-                result[key] = dict1[key] + dict2[key]
-        else:
-            # If the key is only in dict1, copy its value
-            result[key] = dict1[key]
-    
-    # Iterate through keys in dict2 to check for keys not in dict1
-    for key in dict2:
-        if key not in dict1:
-            # If the key is only in dict2, copy its value
-            result[key] = dict2[key]
-    
-    return result
+    # Use itertools.product to generate combinations
+    combinations = list(product(*json_data_list))
 
-def cal_combinations_stat(df):
+    return combinations
+
+def cal_stat(df):
     stats = [{}] * len(df)
     for index, row in df.iterrows():
         for slot in df.columns:
@@ -138,10 +138,10 @@ if __name__ == "__main__":
 
     if combinations:
         df = pd.DataFrame(combinations, columns = slots )
-        df = cal_combinations_stat(df)
+        df = cal_stat(df)
         df = flatten_dict_columns(df)
         print(f'{len(df)} sets created')
         # Sort by a specific column
-        df.sort_values(by=['cavalry health', 'cavalry defense', 'cavalry attack'], ascending=False, inplace=True, ignore_index=True)
+        df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=True)
         print('Best cavalry set (prioritize health, defense, then finally attack:\n')
         print(df.iloc[0])
