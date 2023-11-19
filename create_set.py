@@ -3,6 +3,7 @@
 import json
 import pandas as pd
 from itertools import product
+import argparse
 
 def load_json_file(file_path):
     try:
@@ -130,8 +131,7 @@ def cal_stat(df):
     return df
 
 
-
-if __name__ == "__main__":
+def main(output_file=None):
     slots = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
     json_files = [f'./rawData/{slot}.json' for slot in slots]
     combinations = get_combinations(json_files)
@@ -143,5 +143,18 @@ if __name__ == "__main__":
         print(f'{len(df)} sets created')
         # Sort by a specific column
         df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=True)
-        print('Best cavalry set (prioritize health, defense, then finally attack:\n')
+        print('Best archer set (prioritize health, defense, then finally attack):')
         print(df.iloc[0])
+
+        # Save the DataFrame to a CSV file if an output file is provided
+        if output_file:
+            df.to_csv(output_file, index=False)
+            print(f'DataFrame saved to {output_file}')
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description='Generate and analyze equipment sets.')
+    parser.add_argument('--output', '-o', help='Output CSV file name (optional)')
+    args = parser.parse_args()
+
+    main(args.output)
