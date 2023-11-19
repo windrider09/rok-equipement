@@ -133,7 +133,7 @@ def cal_combinations_stat(df):
 
 if __name__ == "__main__":
     slots = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
-    json_files = [slot+'.json' for slot in slots]
+    json_files = [f'./rawData/{slot}.json' for slot in slots]
     combinations = get_combinations(json_files)
 
     if combinations:
