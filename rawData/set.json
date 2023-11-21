@@ -1,6 +1,6 @@
 {
     "Revival Set":  {
-        2: {
+        "2": {
             "cavalry":	{
                 "attack":   3,
                 "defense":	0,
@@ -21,7 +21,7 @@
             "skill damage": 0,
             "counterattack damage": 0
         },
-        4: {
+        "4": {
             "cavalry":	{
                 "attack":	3,
                 "defense":	3,
@@ -40,6 +40,71 @@
             "march speed": 0,
             "damage to barbarians": 0,
             "skill damage": 0,
+            "counterattack damage": 0
+        }
+    },
+    "Dragon's Breath Set":  {
+        "2": {
+            "cavalry":  {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "infantry": {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "archer":   {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
+        },
+        "4": {
+            "cavalry":  {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "infantry": {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "archer":   {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "march speed":          0,
+            "damage to barbarians": 0,
+            "skill damage":         3,
+            "counterattack damage": 0
+        },
+        "6": {
+            "cavalry":  {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "infantry": {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "archer":   {
+                "attack":   3,
+                "defense":  0,
+                "health":   5
+            },
+            "march speed":          0,
+            "damage to barbarians": 0,
+            "skill damage":         3,
             "counterattack damage": 0
         }
     }

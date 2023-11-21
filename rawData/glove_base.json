@@ -62,5 +62,37 @@
             "counterattack damage": 0
         },
         "set": "Revival Set"
+    },
+    "Dragon's Breath Vambraces": {
+        "tier": "Legendary",
+        "cost": {
+            "leather":  0,
+            "iron":     10,
+            "ebony":    30,
+            "bone":     0,
+            "gold":     20000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack":   0,
+                "defense":  0,
+                "health":   0
+            },
+            "infantry": {
+                "attack":   3,
+                "defense":  0,
+                "health":   0
+            },
+            "archer": {
+                "attack":   7.5,
+                "defense":  0,
+                "health":   0
+            },
+            "march speed":          0,
+            "damage to barbarians": 0,
+            "skill damage":         0,
+            "counterattack damage": 0
+        },
+        "set": "Dragon's Breath Set"
     }
 }

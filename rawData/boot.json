@@ -63,14 +63,46 @@
         },
         "set": null
     },
+    "Dragon's Breath Boots": {
+        "tier": "Legendary",
+        "cost": {
+            "leather": 0,
+            "iron": 10,
+            "ebony": 30,
+            "bone": 0,
+            "gold": 20000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 3,
+                "health": 0
+            },
+            "archer": {
+                "attack": 0,
+                "defense": 7.5,
+                "health": 0
+            },
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
+        },
+        "set": "Dragon's Breath Set"
+    },
     "Cloud Racers - special talent": {
         "tier": "Epic",
         "cost": {
-            "leather": 39.0,
+            "leather": 30.0,
             "iron": 0.0,
-            "ebony": 13.0,
+            "ebony": 10.0,
             "bone": 0.0,
-            "gold": 6500000.0
+            "gold": 5000000.0
         },
         "stats": {
             "cavalry": {
@@ -98,11 +130,11 @@
     "Flame Treads - special talent": {
         "tier": "Epic",
         "cost": {
-            "leather": 13.0,
+            "leather": 10.0,
             "iron": 0.0,
-            "ebony": 39.0,
+            "ebony": 30.0,
             "bone": 0.0,
-            "gold": 6500000.0
+            "gold": 5000000.0
         },
         "stats": {
             "cavalry": {
@@ -126,5 +158,37 @@
             "counterattack damage": 0.0
         },
         "set": null
+    },
+    "Dragon's Breath Boots - special talent": {
+        "tier": "Legendary",
+        "cost": {
+            "leather": 0.0,
+            "iron": 10.0,
+            "ebony": 30.0,
+            "bone": 0.0,
+            "gold": 20000000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 4.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 0.0,
+                "defense": 10.0,
+                "health": 0.0
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0,
+            "skill damage": 0.0,
+            "counterattack damage": 0.0
+        },
+        "set": "Dragon's Breath Set"
     }
 }

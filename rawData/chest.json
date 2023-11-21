@@ -63,14 +63,46 @@
         },
         "set": "Revival Set"
     },
+    "Dragon's Breath Plate": {
+        "tier": "Legendary",
+        "cost": {
+            "leather": 10,
+            "iron": 10,
+            "ebony": 40,
+            "bone": 0,
+            "gold": 20000000
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 5,
+                "health": 0
+            },
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
+            },
+            "archer": {
+                "attack": 0,
+                "defense": 0,
+                "health": 11
+            },
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
+        },
+        "set": "Dragon's Breath Set"
+    },
     "Dark Lord's Blessing - special talent": {
         "tier": "Epic",
         "cost": {
-            "leather": 52.0,
+            "leather": 40.0,
             "iron": 0.0,
-            "ebony": 26.0,
+            "ebony": 20.0,
             "bone": 0.0,
-            "gold": 6500000.0
+            "gold": 5000000.0
         },
         "stats": {
             "cavalry": {
@@ -98,11 +130,11 @@
     "Revival Plate - special talent": {
         "tier": "Epic",
         "cost": {
-            "leather": 26.0,
+            "leather": 20.0,
             "iron": 0.0,
-            "ebony": 52.0,
+            "ebony": 40.0,
             "bone": 0.0,
-            "gold": 7800000.0
+            "gold": 6000000.0
         },
         "stats": {
             "cavalry": {
@@ -126,5 +158,37 @@
             "counterattack damage": 0.0
         },
         "set": "Revival Set"
+    },
+    "Dragon's Breath Plate - special talent": {
+        "tier": "Legendary",
+        "cost": {
+            "leather": 10.0,
+            "iron": 10.0,
+            "ebony": 40.0,
+            "bone": 0.0,
+            "gold": 20000000.0
+        },
+        "stats": {
+            "cavalry": {
+                "attack": 0.0,
+                "defense": 6.5,
+                "health": 0.0
+            },
+            "infantry": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 0.0
+            },
+            "archer": {
+                "attack": 0.0,
+                "defense": 0.0,
+                "health": 14.5
+            },
+            "march speed": 0.0,
+            "damage to barbarians": 0.0,
+            "skill damage": 0.0,
+            "counterattack damage": 0.0
+        },
+        "set": "Dragon's Breath Set"
     }
 }
