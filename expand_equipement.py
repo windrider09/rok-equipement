@@ -3,21 +3,21 @@
 import json
 from math import ceil
 
-def special_talent_stats(data):
+def special_talent_stats(data, en):
     if isinstance(data, dict):
         for key, value in data.items():
             if key == "stats" and isinstance(value, dict):
                 # Recursively update values under the "stats" key
-                data[key] = special_talent_stats(value)
+                data[key] = special_talent_stats(value, 1)
             elif isinstance(value, (int, float)):
                 # special talent stats
-                data[key] = value + ceil(ceil(value/0.5)*0.3)*0.5
+                data[key] = value + en*ceil(ceil(value/0.5)*0.3)*0.5
             elif isinstance(value, dict) or isinstance(value, list):
                 # Recursively process nested dictionaries or lists
-                data[key] = special_talent_stats(value)
+                data[key] = special_talent_stats(value, en)
     elif isinstance(data, list):
         # Recursively process list elements
-        data = [special_talent_stats(item) for item in data]
+        data = [special_talent_stats(item, en) for item in data]
     return data
 
 
@@ -45,7 +45,7 @@ def process_and_save_json(input_file, output_file):
         special_data = add_suffix(special_data, ' - special talent')
 
         # Multiply numerical values under "stats" dictionaries
-        special_talent_stats(special_data)
+        special_talent_stats(special_data, 0)
         
         original_data.update(special_data)
         
