@@ -206,6 +206,7 @@ def main(output_file=None):
         df = get_stat(df)
         df = get_set(df)
         df = get_cost(df)
+        df = flatten_dict_column(df, 'cost')
         df = flatten_dict_column(df, 'stats')
         print(f'{len(df)} sets created')
         # Sort by a specific column
