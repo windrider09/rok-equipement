@@ -9,6 +9,7 @@ from collections import Counter
 
 
 slots_global = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
+material_cost_multiplier = {'Normal': 1, 'Advanced': 4, 'Elite': 16, 'Epic': 64, 'Legendary': 256}
 # slots_global = ['weapon_base', 'helmet_base', 'chest_base', 'glove_base', 'leg_base', 'boot_base']
 
 def load_json_file(file_path):
@@ -137,6 +138,27 @@ def get_combinations(json_files):
 
     return combinations
 
+def get_cost(df):
+    cost = [{}] * len(df)
+    for index, row in df.iterrows():
+        for slot in df.columns:
+            if slot in slots_global:
+                equipment_piece_cost = json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['cost']
+                equipment_tier = json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['tier']
+                cost[index] = add_dicts(cost[index], equipment_piece_cost)
+                cost[index]['material'] = material_cost_multiplier[equipment_tier] * (
+                        cost[index]['leather']+
+                        cost[index]['ebony']+
+                        cost[index]['iron']+
+                        cost[index]['bone'])
+                del cost[index]['leather']
+                del cost[index]['iron']
+                del cost[index]['ebony']
+                del cost[index]['bone']
+
+    df['cost'] = cost 
+    return df
+
 def get_stat(df):
     stats = [{}] * len(df)
     for index, row in df.iterrows():
@@ -183,6 +205,7 @@ def main(output_file=None):
         df = pd.DataFrame(combinations, columns = slots_global )
         df = get_stat(df)
         df = get_set(df)
+        df = get_cost(df)
         df = flatten_dict_column(df, 'stats')
         print(f'{len(df)} sets created')
         # Sort by a specific column
