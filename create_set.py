@@ -9,6 +9,7 @@ from collections import Counter
 
 
 slots_global = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
+# slots_global = ['weapon_base', 'helmet_base', 'chest_base', 'glove_base', 'leg_base', 'boot_base']
 
 def load_json_file(file_path):
     try:
@@ -141,7 +142,8 @@ def get_stat(df):
     for index, row in df.iterrows():
         for slot in df.columns:
             if slot in slots_global:
-                stats[index] = add_dicts(stats[index], json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['stats'])
+                equipment_piece_stat = json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['stats']
+                stats[index] = add_dicts(stats[index], equipment_piece_stat)
     df['stats'] = stats
     return df
 
@@ -156,12 +158,21 @@ def get_set(df):
         counts = Counter(item for item in lst if item is not None)
         return dict(counts)
 
-    # Apply the function to each row and create the 'sets' column
+    # Function to get set stats
+    def get_set_stat(row):
+        for set_name, set_count in row['sets'].items():
+            set_stats = json.load(open('./rawData/set.json','r')).get(set_name,{}).get(str(set_count),{})
+            if set_stats:
+                row['stats'] = add_dicts(row['stats'], set_stats)
+        return row
 
+    # Apply the functions to each row and create new columns
     df['set_list'] = df.apply(lambda row: [get_set_name(row,slot) for slot in slots_global], axis = 1)
     df['sets'] = df['set_list'].apply(count_occurrences)
+    df = df.apply(lambda row: get_set_stat(row), axis = 1)
+    df = df.drop(['set_list'], axis=1)
 
-    return df.drop(['set_list'], axis=1)
+    return df
 
 
 def main(output_file=None):
@@ -172,12 +183,12 @@ def main(output_file=None):
         df = pd.DataFrame(combinations, columns = slots_global )
         df = get_stat(df)
         df = get_set(df)
-        print(df.iloc[0])
         df = flatten_dict_column(df, 'stats')
         print(f'{len(df)} sets created')
         # Sort by a specific column
-        df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=True)
+        df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=False)
         print('Best archer set (prioritize health, defense, then finally attack):')
+        #print(df.head(1))
         print(df.iloc[0])
 
         # Save the DataFrame to a CSV file if an output file is provided
