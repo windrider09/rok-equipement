@@ -186,7 +186,7 @@ def main(output_file=None):
         df = flatten_dict_column(df, 'stats')
         print(f'{len(df)} sets created')
         # Sort by a specific column
-        df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=False)
+        df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=True)
         print('Best archer set (prioritize health, defense, then finally attack):')
         #print(df.head(1))
         print(df.iloc[0])
