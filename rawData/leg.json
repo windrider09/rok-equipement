@@ -25,7 +25,9 @@
                 "health": 0
             },
             "march speed": 0,
-            "damage to barbarians": 5
+            "damage to barbarians": 5,
+            "skill damage": 0,
+            "counterattack damage": 0
         },
         "set": null
     },
@@ -55,7 +57,9 @@
                 "health": 0
             },
             "march speed": 0,
-            "damage to barbarians": 0
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
         },
         "set": "Revival Set"
     },
@@ -85,7 +89,9 @@
                 "health": 0.0
             },
             "march speed": 0.0,
-            "damage to barbarians": 6.5
+            "damage to barbarians": 6.5,
+            "skill damage": 0.0,
+            "counterattack damage": 0.0
         },
         "set": null
     },
@@ -115,7 +121,9 @@
                 "health": 0.0
             },
             "march speed": 0.0,
-            "damage to barbarians": 0.0
+            "damage to barbarians": 0.0,
+            "skill damage": 0.0,
+            "counterattack damage": 0.0
         },
         "set": "Revival Set"
     }

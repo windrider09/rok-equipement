@@ -1,62 +1,66 @@
 {
-    "Dark Lord's Blessing":	{
-        "tier":	"Epic",
-        "cost":	{
-            "leather":	40,
-            "iron":	    0,
-            "ebony":	20,
-            "bone":	    0,
-            "gold":	    5000000
+    "Dark Lord's Blessing": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 40,
+            "iron": 0,
+            "ebony": 20,
+            "bone": 0,
+            "gold": 5000000
         },
-        "stats":	{
-            "cavalry":	{
-                "attack":	0,
-                "defense":	8,
-                "health":	0
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 8,
+                "health": 0
             },
-            "infantry":	{
-                "attack":	0,
-                "defense":	0,
-                "health":	0
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
             },
-            "archer":	{
-                "attack":	5,
-                "defense":	0,
-                "health":	0
+            "archer": {
+                "attack": 5,
+                "defense": 0,
+                "health": 0
             },
-            "march speed":	0,
-            "damage to barbarians":	0
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
         },
-        "set":	null
+        "set": null
     },
-    "Revival Plate":	{
-        "tier":	"Epic",
-        "cost":	{
-            "leather":  20,
-            "iron":	    0,
-            "ebony":	40,
-            "bone":     0,
-            "gold":	    6000000
+    "Revival Plate": {
+        "tier": "Epic",
+        "cost": {
+            "leather": 20,
+            "iron": 0,
+            "ebony": 40,
+            "bone": 0,
+            "gold": 6000000
         },
-        "stats":	{
-            "cavalry":	{
-                "attack":	 0,
-                "defense":	 5,
-                "health":	 0
+        "stats": {
+            "cavalry": {
+                "attack": 0,
+                "defense": 5,
+                "health": 0
             },
-            "infantry":	{
-                "attack":	0,
-                "defense":	0,
-                "health":	0
+            "infantry": {
+                "attack": 0,
+                "defense": 0,
+                "health": 0
             },
-            "archer":	{
-                "attack":	7.5,
-                "defense":	0,
-                "health":	0
+            "archer": {
+                "attack": 7.5,
+                "defense": 0,
+                "health": 0
             },
-            "march speed":	0,
-            "damage to barbarians":	0
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
         },
-        "set":  "Revival Set"
+        "set": "Revival Set"
     }
 }
