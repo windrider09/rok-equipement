@@ -16,7 +16,10 @@
                 "defense":	0,
                 "health":   0
             },
-            "skill damage": 0
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
         },
         4: {
             "cavalry":	{
@@ -34,7 +37,10 @@
                 "defense":	3,
                 "health":   0
             },
-            "skill damage": 0
+            "march speed": 0,
+            "damage to barbarians": 0,
+            "skill damage": 0,
+            "counterattack damage": 0
         }
     }
 }

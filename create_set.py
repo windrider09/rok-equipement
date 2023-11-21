@@ -4,6 +4,11 @@ import json
 import pandas as pd
 from itertools import product
 import argparse
+from collections import Counter
+
+
+
+slots_global = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
 
 def load_json_file(file_path):
     try:
@@ -71,12 +76,14 @@ def add_dicts(dict1, dict2):
     
     return result
 
-def flatten_dict_columns(df):
+def flatten_dict_column(df, column_name=None):
     """
-    Recursively flatten columns containing dictionaries into multiple columns with numerical values.
+    Recursively flatten a column containing dictionaries into multiple columns with numerical values.
 
     Args:
-        df (pd.DataFrame): Input DataFrame with columns containing dictionaries.
+        df (pd.DataFrame): Input DataFrame.
+        column_name (str, optional): The name of the column containing dictionaries to be flattened.
+            If None, all columns with dictionaries will be flattened.
 
     Returns:
         pd.DataFrame: New DataFrame with flattened columns.
@@ -91,7 +98,14 @@ def flatten_dict_columns(df):
         return flattened
 
     new_df = df.copy()
-    for column in df.columns:
+
+    if column_name is None:
+        # Flatten all columns with dictionaries
+        columns_to_flatten = [col for col in df.columns if df[col].apply(lambda x: isinstance(x, dict)).all()]
+    else:
+        columns_to_flatten = [column_name]
+
+    for column in columns_to_flatten:
         if df[column].apply(lambda x: isinstance(x, dict)).all():
             # Convert the column to JSON strings for easy parsing
             new_df[column] = df[column].apply(json.dumps)
@@ -122,24 +136,44 @@ def get_combinations(json_files):
 
     return combinations
 
-def cal_stat(df):
+def get_stat(df):
     stats = [{}] * len(df)
     for index, row in df.iterrows():
         for slot in df.columns:
-            stats[index] = add_dicts(stats[index], json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['stats'])
+            if slot in slots_global:
+                stats[index] = add_dicts(stats[index], json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['stats'])
     df['stats'] = stats
     return df
 
+def get_set(df):
+    # Define a function to extract the set name from a JSON file
+    def get_set_name(row, slot):
+        return json.load(open(f'./rawData/{slot}.json','r'))[row[slot]]['set']
+    
+    # Function to count occurrences and create the dictionary
+    def count_occurrences(lst):
+        # Use Counter to count occurrences while omitting 'None'
+        counts = Counter(item for item in lst if item is not None)
+        return dict(counts)
+
+    # Apply the function to each row and create the 'sets' column
+
+    df['set_list'] = df.apply(lambda row: [get_set_name(row,slot) for slot in slots_global], axis = 1)
+    df['sets'] = df['set_list'].apply(count_occurrences)
+
+    return df.drop(['set_list'], axis=1)
+
 
 def main(output_file=None):
-    slots = ['weapon', 'helmet', 'chest', 'glove', 'leg', 'boot']
-    json_files = [f'./rawData/{slot}.json' for slot in slots]
+    json_files = [f'./rawData/{slot}.json' for slot in slots_global]
     combinations = get_combinations(json_files)
 
     if combinations:
-        df = pd.DataFrame(combinations, columns = slots )
-        df = cal_stat(df)
-        df = flatten_dict_columns(df)
+        df = pd.DataFrame(combinations, columns = slots_global )
+        df = get_stat(df)
+        df = get_set(df)
+        print(df.iloc[0])
+        df = flatten_dict_column(df, 'stats')
         print(f'{len(df)} sets created')
         # Sort by a specific column
         df.sort_values(by=['archer health', 'archer defense', 'archer attack'], ascending=False, inplace=True, ignore_index=True)
